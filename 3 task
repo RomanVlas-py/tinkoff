@@ -1,0 +1,26 @@
+#решение 3 задачи из экзамена
+a = input()
+raz = (a.split(" "))
+lab = []
+lud = []
+for i in range(0, int(raz[0])):
+    b = input()
+    lab.append(b.split(" "))
+for i in range(0, int(raz[2])):
+    b = input()
+    lud.append(b.split(" "))
+print(lab)
+for i in range(0, int(raz[2])):
+    y = (int(lud[i][0]))-1
+    x = (int(lud[i][1]))-1
+    s = int(lud[i][2])
+    count = 0
+    tek = int(lab[y][x])
+    for t in range(0, int(raz[1])):
+        if abs(int(lab[y][t]) - tek) <= s and x!= t:
+            count += 1
+    for tt in range(0, int(raz[0])):
+        if abs(int(lab[tt][x]) - tek) <= s and y!= tt:
+            count += 1
+    print(count)
+#при решении использовал много разых массивов так, как ограничений по памяти не было
